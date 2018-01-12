@@ -54,7 +54,7 @@ def get_days_with_more_than_1_percentage_errors(cursor):
 
     q2 = """select DATE(time), count(*) as ctotal
             from log
-            group by DATE(time);"""
+            group by DATE(time)"""
 
     query = """select error.date, (error.cerror*100.0/total.ctotal)
                from ({}) as error join ({}) as total
